@@ -16,37 +16,50 @@ public class Chemotaxis extends PApplet {
 
  //declare bacteria variables here 
  Bacteria joe;
+ Bacteria [] bob = new Bacteria[3];
+ 
 
  public void setup()   
  {     
  	//initialize bacteria variables here 
  	size(500, 500);
- 	joe = new Bacteria();
+
+ 	//joe = new Bacteria();
+ 	
+ 	
 
  }   
  public void draw()   
  {    
  	//move and show the bacteria 
  	background(0, 0, 250);
- 	joe.show();
+ 	//joe.show();
+ 	for(int i = 0; i < bob.length; i++)
+ 	{
+ 		bob[i] = new Bacteria();
+ 		bob[i].show();
+ 	}
+
+
+
 
  }  
  class Bacteria    
  {     
  	//lots of java! 
- 	int x;
- 	int y;
+ 	int x2;
+ 	int y2;
+
  	Bacteria()
  	{
- 		y = width/2;
- 		x = height/2;
-
+ 		x2 = width/2;
+ 		y2 = height/2;
  	}  
  	public void show()
  	{
- 		ellipse(x, y, 25, 25);
- 		y = y + (int)(Math.random()*5 - 2);
- 		x = x + (int)(Math.random()*5 - 2);
+ 		ellipse(x2, y2, 25, 25);
+ 		y2 = y2 + (int)(Math.random()*5 - 2);
+ 		x2 = x2 + (int)(Math.random()*5 - 2);
  	}
  }    
   static public void main(String[] passedArgs) {
