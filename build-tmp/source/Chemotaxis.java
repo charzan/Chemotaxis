@@ -43,6 +43,7 @@ public class Chemotaxis extends PApplet {
  	for(int i = 0; i < bob.length; i++)
  	{
  		bob[i].show();
+ 		bob[i].move();
  		//System.out.println("ok");
  	}
 
@@ -66,13 +67,51 @@ public class Chemotaxis extends PApplet {
  		bacteriaColor = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
  	} 
 
+ 	public void move()
+ 	{
+ 		if(mousePressed)
+ 		{
+ 			if(x2 < 250 && y2 < 250)
+ 			{
+ 				y2 = y2 + (int)(Math.random()*20 - 15);
+ 				x2 = x2 + (int)(Math.random()*20 - 15);
+
+ 			}
+ 			if(x2 < 500 && x2 > 250  && y2 < 500 && y2 > 250)
+ 			{
+ 				y2 = y2 + (int)(Math.random()*20 - 15);
+ 				x2 = x2 + (int)(Math.random()*20 + 15);
+
+ 			}
+ 			if(x2 < 250 && y2 < 500 && y2 > 250)
+ 			{
+ 				y2 = y2 + (int)(Math.random()*20 - 15);
+ 				x2 = x2 + (int)(Math.random()*20 + 15);
+
+ 			}
+ 			if(x2 > 250 && x2 < 500 && y2 > 250 && y2 < 500)
+ 			{
+ 				y2 = y2 + (int)(Math.random()*20 + 15);
+ 				x2 = x2 + (int)(Math.random()*20 + 15);
+
+ 			}
+ 			
+ 		}
+ 		else
+ 		{
+ 			y2 = y2 - (int)(Math.random()*20 - 10);
+ 			x2 = x2 - (int)(Math.random()*20 - 10);
+
+ 		}
+ 		
+ 	}
+
  	public void show()
  	{
  		stroke(bacteriaOutlineColor);
  		fill(bacteriaColor);
  		ellipse(x2, y2, 10, 10);
- 		y2 = y2 + (int)(Math.random()*20 - 10);
- 		x2 = x2 + (int)(Math.random()*20 - 10);
+
  	}
  }    
   static public void main(String[] passedArgs) {
