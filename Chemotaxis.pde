@@ -23,7 +23,7 @@
  void draw()   
  {    
  	//move and show the bacteria 
- 	background(0, 0, 0);
+ 	background(bacteria.bacteriaColor, 0, 0);
  	for(int i = 0; i < bob.length; i++)
  	{
  		bob[i].show();
@@ -53,7 +53,7 @@
 
  	void move()
  	{
- 		if(mousePressed)
+ 		/*if(mousePressed)
  		{
  			if(x2 < 250 && y2 < 250)
  			{
@@ -81,12 +81,11 @@
  			}
  			
  		}
- 		else
- 		{
+ 		*/
  			y2 = y2 - (int)(Math.random()*20 - 10);
  			x2 = x2 - (int)(Math.random()*20 - 10);
 
- 		}
+ 		
  		
  	}
 
